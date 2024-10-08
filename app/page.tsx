@@ -1,5 +1,10 @@
-import { BirthdayWebsiteComponent } from "@/components/birthday-website"
+import { BirthdayWebsiteComponent } from '@/components/birthday-website'
+import { Suspense } from 'react'
 
 export default function Page() {
-  return <BirthdayWebsiteComponent />
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <BirthdayWebsiteComponent />
+        </Suspense>
+    )
 }

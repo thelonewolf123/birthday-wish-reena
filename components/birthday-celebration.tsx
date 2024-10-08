@@ -19,7 +19,7 @@ const letterAnimation = {
 }
 
 export default function BirthdayCelebrationComponent() {
-    const title = 'Happy Birthday Reena!'
+    const title = 'Happy Birthday Rena Xavier 🥳'
     const subtitle =
         'Your wishes are sprinkled with fairy dust and wrapped in moonbeams ✨'
     const subparagraph = `A fairy's wish for you, dear one: May your heart always believe in magic, your spirit soar as high as your dreams, and your life be filled with the wonder of a thousand twinkling stars.`
