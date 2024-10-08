@@ -6,15 +6,15 @@ import BirthdayCelebration from './birthday-celebration'
 import FloatingBalloons from './floating-balloons'
 import SparklingGraphics from './sparkling-graphics'
 import { Button } from '@/components/ui/button'
-import { useSearchParams } from 'next/navigation'
 
 export function BirthdayWebsiteComponent() {
     const [isCountdownComplete, setIsCountdownComplete] = useState(false)
     const [isMuted, setIsMuted] = useState(true)
-    const searchParams = useSearchParams()
-    const targetDate = searchParams.has('show')
-        ? new Date('2024-10-08T00:00:00')
-        : new Date('2024-10-09T00:00:00') // Set this to the birthday date
+    const [targetDate] = useState(() => {
+        const date = new Date()
+        date.setSeconds(date.getSeconds() + 11)
+        return date
+    })
 
     useEffect(() => {
         const audio = new Audio('/birthday-song.m4a') // Ensure this file is in your public folder
