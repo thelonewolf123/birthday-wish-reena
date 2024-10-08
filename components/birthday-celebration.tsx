@@ -19,8 +19,10 @@ const letterAnimation = {
 }
 
 export default function BirthdayCelebrationComponent() {
-    const title = 'Happy Birthday!'
-    const subtitle = 'May your day be filled with magic and wonder!'
+    const title = 'Happy Birthday Reena!'
+    const subtitle =
+        'Your wishes are sprinkled with fairy dust and wrapped in moonbeams ✨'
+    const subparagraph = `A fairy's wish for you, dear one: May your heart always believe in magic, your spirit soar as high as your dreams, and your life be filled with the wonder of a thousand twinkling stars.`
 
     return (
         <div className="text-center">
@@ -71,6 +73,28 @@ export default function BirthdayCelebrationComponent() {
                     >
                         {word}
                     </motion.span>
+                ))}
+            </motion.div>
+            <motion.div
+                className="text-2xl text-blue-700 mb-8 px-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1, duration: 0.8 }}
+            >
+                {subparagraph.split(' ').map((word, index) => (
+                    <motion.p
+                        key={index}
+                        className="inline-block mr-2"
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{
+                            delay: 1.5 + index * 0.1,
+                            duration: 0.5,
+                            type: 'spring'
+                        }}
+                    >
+                        {word}
+                    </motion.p>
                 ))}
             </motion.div>
 
